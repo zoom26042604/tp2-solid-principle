@@ -1,0 +1,15 @@
+*.class
+*.jar
+*.war
+*.ear
+out/
+bin/
+target/
+.idea/
+*.iml
+.vscode/
+.DS_Store
+factures.txt
+devis.txt
+*.log
+*.tmp
