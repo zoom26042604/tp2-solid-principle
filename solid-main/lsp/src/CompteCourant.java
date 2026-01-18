@@ -1,6 +1,6 @@
-public class CompteBancaire extends Compte implements CompteAvecRetrait {
+public class CompteCourant extends Compte implements CompteAvecRetrait {
 
-    public CompteBancaire(double soldeInitial) {
+    public CompteCourant(double soldeInitial) {
         super(soldeInitial);
     }
 
@@ -10,3 +10,4 @@ public class CompteBancaire extends Compte implements CompteAvecRetrait {
         System.out.println("Retrait effectué. Nouveau solde : " + solde);
     }
 }
+

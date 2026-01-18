@@ -1,4 +1,4 @@
-public class ImprimanteMultifonction implements Imprimante, Scanneur, Fax {
+public class ImprimanteScanneur implements Imprimante, Scanneur {
 
     @Override
     public void imprimer() {
@@ -9,9 +9,5 @@ public class ImprimanteMultifonction implements Imprimante, Scanneur, Fax {
     public void scanner() {
         System.out.println("Scan en cours...");
     }
-
-    @Override
-    public void faxer() {
-        System.out.println("Fax envoyé...");
-    }
 }
+

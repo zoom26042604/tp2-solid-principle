@@ -1,4 +1,4 @@
-public class ImprimanteMultifonction implements Imprimante, Scanneur, Fax {
+public class MachineMultifonction implements Imprimante, Scanneur, Fax {
 
     @Override
     public void imprimer() {
@@ -15,3 +15,4 @@ public class ImprimanteMultifonction implements Imprimante, Scanneur, Fax {
         System.out.println("Fax envoyé...");
     }
 }
+

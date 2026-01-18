@@ -1,12 +1,12 @@
-public class NotificationService {
+public class ServiceNotification {
 
     private MessageSender messageSender;
 
-    public NotificationService(MessageSender messageSender) {
+    public ServiceNotification(MessageSender messageSender) {
         this.messageSender = messageSender;
     }
 
-    public void envoyer(String message) {
+    public void envoyerMessage(String message) {
         messageSender.envoyer(message);
     }
 
@@ -14,3 +14,4 @@ public class NotificationService {
         this.messageSender = messageSender;
     }
 }
+

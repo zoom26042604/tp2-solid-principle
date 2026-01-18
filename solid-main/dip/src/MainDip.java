@@ -5,7 +5,6 @@ public class MainDip {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        NotificationService service = new NotificationService();
 
         while (true) {
             System.out.println("\n--- MENU ---");
@@ -18,13 +17,33 @@ public class MainDip {
             int choix = lireEntier(scanner);
             if (choix == 0) break;
 
+            MessageSender sender = creerMessageSender(choix);
+            if (sender == null) {
+                System.out.println("Choix invalide");
+                continue;
+            }
+
             System.out.print("Message : ");
             String message = scanner.nextLine();
 
-            service.envoyer(message, choix);
+            NotificationService service = new NotificationService(sender);
+            service.envoyer(message);
         }
 
         scanner.close();
+    }
+
+    private static MessageSender creerMessageSender(int choix) {
+        switch (choix) {
+            case 1:
+                return new EmailSender();
+            case 2:
+                return new SmsSender();
+            case 3:
+                return new PushNotificationSender();
+            default:
+                return null;
+        }
     }
 
     private static int lireEntier(Scanner scanner) {

@@ -23,10 +23,26 @@ public class MainOCP {
                 continue;
             }
 
+            Client client;
+            switch (choix) {
+                case 1:
+                    client = new ClientStandard();
+                    break;
+                case 2:
+                    client = new ClientEtudiant();
+                    break;
+                case 3:
+                    client = new ClientVIP();
+                    break;
+                default:
+                    System.out.println("Type client inconnu");
+                    continue;
+            }
+
             System.out.print("Montant HT : ");
             double montant = lireDouble(scanner);
 
-            double total = calculateur.calculerTotal(choix, montant);
+            double total = calculateur.calculerTotal(client, montant);
             System.out.println("Montant après remise : " + total);
         }
 

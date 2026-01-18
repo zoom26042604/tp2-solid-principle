@@ -1,7 +1,8 @@
-public class SmsSender implements MessageSender {
+public class SmsMessageSender implements MessageSender {
 
     @Override
     public void envoyer(String message) {
         System.out.println("SMS envoyé : " + message);
     }
 }
+
